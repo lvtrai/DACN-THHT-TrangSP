@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>t-shoes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="../static/css/iofrm-style.css" th:href="@{/css/iofrm-style.css}">
+    <link rel="stylesheet" href="../static/css/iofrm-theme2.css" th:href="@{/css/iofrm-theme2.css}">
+</head>
+<body>
+    <div class="form-body">
+        <div class="website-logo">
+            <a href="index.html">
+                <div class="logo">
+                    <img class="logo-size" src="images/logo/logo.png" alt="">
+                </div>
+            </a>
+        </div>
+        <div class="row">
+            <div class="img-holder">
+                <div class="bg"></div>
+                <div class="info-holder">
+
+                </div>
+            </div>
+            <div class="form-holder">
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>SignIn</h3>
+ 							<div class="invalid-feedback">Tên đăng nhập hoặc mật khẩu không chính xác.</div>                          <div class="page-links">
+                            <a th:href="@{/signin}" class="active">SignIn</a><a th:href="@{/signup}">SignUp</a>
+                        </div>
+                        <form th:action="@{/signin}" method="POST">
+                            <input class="form-control" type="text" name="username" 
+                             th:classappend="${param.error} ? is-invalid"  placeholder="Username" required>
+                            <input class="form-control" type="password" name="password"
+                             th:classappend="${param.error} ? is-invalid" placeholder="Password" required>
+                            <div class="form-button">
+                                <button id="submit" type="submit" class="ibtn">Login</button>
+                                <a class="btn ibtn" th:href="@{/home}">Cancel</a> 
+                            </div>
+                        </form>
+                        <div class="other-links">
+                            <span>Or login with</span><a href="#">Facebook</a><a href="#">Google</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
