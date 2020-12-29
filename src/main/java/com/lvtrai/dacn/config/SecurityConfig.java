@@ -44,6 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 		.antMatchers(PUBLIC_MATCHERS).permitAll()
         .antMatchers("/shopping-cart/**").hasRole("KHACHHANG")
+        .antMatchers("/admin/**").hasRole("ADMIN")
         .and()
         .csrf().disable().cors().disable()
 		.formLogin().failureUrl("/login?error")

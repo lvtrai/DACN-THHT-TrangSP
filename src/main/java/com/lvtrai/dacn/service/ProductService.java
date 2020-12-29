@@ -11,8 +11,6 @@ public interface ProductService {
 	
 	Page<Product> findProductsByCriteria(Pageable pageable, Integer priceLow, Integer priceHigh, List<String> productImages, String search);
 		
-//	List<Product> findFirstProducts();
-
 	Product findProductById(Long id);
 		
 	List<String> getAllProductImages();

@@ -19,7 +19,7 @@
           </p>
           <p>
             <span class="text-muted">Tổng Tiền: </span>
-            <span class="text-info"><span th:text="${order.orderTotal}+ 'VNĐ'"></span></span>
+            <span class="text-info"><span th:text="${order.orderTotal}+ ' VNĐ'"></span></span>
           </p>
           <p>Ngày giao hàng dự kiến ​​là <span th:text="${#dates.format(order.shippingDate, 'dd-MMM-yyyy')}"></span></p>
           <a th:href="@{/store}" class="btn btn-info rounded mb-3">TIẾP TỤC MUA SẮM</a>

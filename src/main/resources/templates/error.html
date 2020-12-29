@@ -1,0 +1,39 @@
+<!doctype html>
+<html xmlns:th="http://www.w3.org./1999/xhtml">
+<head th:replace="common/header :: common-header" />
+
+<body>
+
+<div class="container">
+<div class="text-center">
+  <h1>Đã xảy ra lỗi!</h1>
+  <a href="/" class="btn btn-primary btn-lg my-3">Trang Chủ</a>
+</div>
+<table class="table">
+    <tr>
+        <td>Lỗi</td>
+        <td th:text="${error}"/>
+    </tr>
+    <tr>
+        <td>Trạng thái</td>
+        <td th:text="${status}"/>
+    </tr>
+    <tr>
+        <td>Đường dẫn</td>
+        <td th:text="${path}"/>
+    </tr>
+    <tr>
+        <td>Thời gian</td>
+        <td th:text="${timestamp}"/>
+    </tr>
+    <tr>
+        <td>Thông báo</td>
+        <td th:text="${message}"/>
+    </tr>  
+</table>
+</div>
+
+<div th:replace="common/header :: body-scripts"> </div>
+
+</body>
+</html>
