@@ -40,8 +40,8 @@ public class User implements UserDetails{
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id", nullable=false, updatable=false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="id")
 	private Long id;
 	@NotNull
 	private String username;
@@ -62,11 +62,6 @@ public class User implements UserDetails{
 		Set<GrantedAuthority> authorites = new HashSet<>();
 		userRoles.forEach(userRole -> authorites.add(new Authority(userRole.getRole().getName())));
 		return authorites;
-	}
-
-	@Override
-	public String toString() {
-	  return getClass().getSimpleName() + "[id=" + id + "]" + "[username=" + username + "]" + "[password=" + password + "]" + "[email=" + email + "]";
 	}
 	
 	@Override
