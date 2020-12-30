@@ -14,5 +14,6 @@ public interface ProductService {
 	Product findProductById(Long id);
 		
 	List<String> getAllProductImages();
-
+	
+	List<Product> findFirstProducts();
 }
